@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:orientation="horizontal">
 
     <ImageView
+        android:id="@+id/book_image"
         android:layout_width="80dp"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:src="@drawable/ic_launcher_foreground"/>
 
 
     <LinearLayout
@@ -16,14 +19,18 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/book_title"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            tools:text="NA DRINI CUPRIJA"/>
 
         <TextView
+            android:id="@+id/book_author"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            tools:text="IVO ANDRIC"/>
 
 
     </LinearLayout>
