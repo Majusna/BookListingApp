@@ -1,5 +1,7 @@
 package com.example.android.booklistingapp;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.util.Log;
 import org.json.JSONArray;
@@ -16,7 +18,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueryUtils {
+public final class QueryUtils {
 
 
     public static final String LOG_TAG = BooksActivity.class.getSimpleName();
@@ -39,6 +41,10 @@ public class QueryUtils {
     private static String makeHttpRequest (URL url )throws IOException {
 
         String jsonResponse ="";
+
+        if (url == null) {
+            return jsonResponse;
+        }
 
         HttpURLConnection urlConnection = null;
         InputStream inputStream = null;
@@ -88,6 +94,7 @@ public class QueryUtils {
         return output.toString();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private static List<Book> extractFeatureFromJson(String bookJSON) {
 
         // If the JSON string is empty or null, then return early.
@@ -121,18 +128,23 @@ public class QueryUtils {
 
                 String bookTitle = infoJsonOb.getString("title");
 
-                String bookAuthor = infoJsonOb.getJSONArray("author").toString();
+                String bookAuthor = infoJsonOb.getString("title");
 
-                JSONObject imageLink = infoJsonOb.getJSONObject("imageLinks");
+               // JSONArray author = infoJsonOb.getJSONArray("author");
+               // String bookTitle  = String.join(",", (CharSequence) author);
 
-                String bookImage = imageLink.getString("thumbnail");
+               // String bookAuthor = String.join(",", (CharSequence) author);
 
-                String infoLink = infoJsonOb.getString("infoLink");
+              //  JSONObject imageLink = infoJsonOb.getJSONObject("imageLinks");
+
+             //   String bookImage = imageLink.getString("thumbnail");
+
+              //  String infoLink = infoJsonOb.getString("infoLink");
 
 
                 // Create a new {@link Earthquake} object with the magnitude, location, time,
                 // and url from the JSON response.
-                Book books = new Book( bookImage, bookTitle, bookAuthor, infoLink);
+                Book books = new Book(bookTitle, bookAuthor);
                 bookList.add(books);
 
             }

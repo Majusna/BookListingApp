@@ -26,13 +26,23 @@ public class BookAdapter extends ArrayAdapter<Book> {
                     R.layout.books_list_item, parent, false);
         }
 
-        ImageView bookImageView = (ImageView)listItemView.findViewById(R.id.book_image);
+        // Find the earthquake at the given position in the list of earthquakes
+        Book currentBook = getItem(position);
+
+
+       // ImageView bookImageView = (ImageView)listItemView.findViewById(R.id.book_image);
+      //  bookImageView.setImageURI(currentBook.getBookImage());
+
 
 
         TextView bookTitleView = (TextView) listItemView.findViewById(R.id.book_title);
+        bookTitleView.setText(currentBook.getBookTitle());
 
 
         TextView bookAuthorView = (TextView) listItemView.findViewById(R.id.book_author);
+        bookAuthorView.setText(currentBook.getBookAuthor());
+
+
 
 
 
