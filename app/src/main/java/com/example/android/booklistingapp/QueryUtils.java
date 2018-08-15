@@ -125,10 +125,10 @@ public final class QueryUtils {
 
                 String bookTitle = infoJsonOb.getString("title");
 
-               // String bookAuthor = infoJsonOb.getString("title");
 
-                String bookAuthor = infoJsonOb.getJSONArray("authors").join(", ");
+                String bookAuthor = infoJsonOb.getJSONArray("authors").join(",").replace("\"", " ");
 
+                String b = "b";
                 //  JSONObject imageLink = infoJsonOb.getJSONObject("imageLinks");
 
              //   String bookImage = imageLink.getString("thumbnail");
@@ -138,7 +138,7 @@ public final class QueryUtils {
 
                 // Create a new {@link Earthquake} object with the magnitude, location, time,
                 // and url from the JSON response.
-                Book books = new Book(bookTitle, bookAuthor);
+                Book books = new Book(bookTitle, bookAuthor, b);
                 bookList.add(books);
 
             }

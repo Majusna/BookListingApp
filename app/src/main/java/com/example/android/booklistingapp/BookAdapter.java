@@ -30,16 +30,16 @@ public class BookAdapter extends ArrayAdapter<Book> {
         Book currentBook = getItem(position);
 
 
-       // ImageView bookImageView = (ImageView)listItemView.findViewById(R.id.book_image);
-      //  bookImageView.setImageURI(currentBook.getBookImage());
+        ImageView bookImageView = (ImageView)listItemView.findViewById(R.id.book_image);
+      //  bookImageView.setImage(currentBook.getBookImage());
 
 
 
-        TextView bookTitleView = (TextView) listItemView.findViewById(R.id.book_title);
+        TextView bookTitleView = listItemView.findViewById(R.id.book_title);
         bookTitleView.setText(currentBook.getBookTitle());
 
 
-        TextView bookAuthorView = (TextView) listItemView.findViewById(R.id.book_author);
+        TextView bookAuthorView = listItemView.findViewById(R.id.book_author);
         bookAuthorView.setText(currentBook.getBookAuthor());
 
 

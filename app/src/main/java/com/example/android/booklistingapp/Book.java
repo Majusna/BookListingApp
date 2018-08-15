@@ -5,21 +5,21 @@ package com.example.android.booklistingapp;
 
 public class Book {
 
-    //private String mBookImage;
+    private String mBookImage;
     private String mBookTitle;
     private String mBookAuthor;
     //private String mUrl;
 
-    public Book(String bookTitle, String bookAuthor){
+    public Book(String bookTitle, String bookAuthor, String bookImage ){
 
-       // mBookImage = bookImage;
+        mBookImage = bookImage;
         mBookTitle = bookTitle;
         mBookAuthor = bookAuthor;
        // mUrl = urlString;
     }
 
     // when method @getBookImage is called, it returns image of the book
-    //public String getBookImage(){ return mBookImage; }
+    public String getBookImage(){ return mBookImage; }
 
     //when method @getBookTitle is called, it returns title of the book
     public String getBookTitle(){
