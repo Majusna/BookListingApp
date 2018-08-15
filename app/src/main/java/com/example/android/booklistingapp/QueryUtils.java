@@ -133,12 +133,12 @@ public final class QueryUtils {
 
              //   String bookImage = imageLink.getString("thumbnail");
 
-              //  String infoLink = infoJsonOb.getString("infoLink");
+                String infoLink = infoJsonOb.getString("infoLink");
 
 
                 // Create a new {@link Earthquake} object with the magnitude, location, time,
                 // and url from the JSON response.
-                Book books = new Book(bookTitle, bookAuthor, b);
+                Book books = new Book(bookTitle, bookAuthor, b, infoLink);
                 bookList.add(books);
 
             }

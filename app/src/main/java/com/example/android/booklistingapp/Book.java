@@ -8,14 +8,14 @@ public class Book {
     private String mBookImage;
     private String mBookTitle;
     private String mBookAuthor;
-    //private String mUrl;
+    private String mUrl;
 
-    public Book(String bookTitle, String bookAuthor, String bookImage ){
+    public Book(String bookTitle, String bookAuthor, String bookImage, String urlString ){
 
         mBookImage = bookImage;
         mBookTitle = bookTitle;
         mBookAuthor = bookAuthor;
-       // mUrl = urlString;
+        mUrl = urlString;
     }
 
     // when method @getBookImage is called, it returns image of the book
@@ -31,6 +31,9 @@ public class Book {
         return mBookAuthor;
     }
 
+    public String getBookUrl(){
+        return mUrl;
+    }
 
 
 }

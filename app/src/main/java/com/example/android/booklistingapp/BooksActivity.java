@@ -42,7 +42,7 @@ public class BooksActivity extends AppCompatActivity implements LoaderManager.Lo
         bookListView.setAdapter(mAdapter);
 
 
-        /* Set an item click listener on the ListView, which sends an intent to a web browser
+        // Set an item click listener on the ListView, which sends an intent to a web browser
         // to open a website with more information about the selected earthquake.
         bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -59,7 +59,7 @@ public class BooksActivity extends AppCompatActivity implements LoaderManager.Lo
                 // Send the intent to launch a new activity
                 startActivity(websiteIntent);
             }
-        }); */
+        });
 
 
 
