@@ -8,7 +8,7 @@ public class Book {
     //private String mBookImage;
     private String mBookTitle;
     private String mBookAuthor;
-   // private String mUrl;
+    //private String mUrl;
 
     public Book(String bookTitle, String bookAuthor){
 
@@ -31,9 +31,6 @@ public class Book {
         return mBookAuthor;
     }
 
-    //when method @getBookUrl is called, it returns url adress of the book
-  //  public String getBookUrl(){
-    //    return mBookAuthor;
-  //  }
+
 
 }

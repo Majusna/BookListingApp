@@ -1,7 +1,5 @@
 package com.example.android.booklistingapp;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.util.Log;
 import org.json.JSONArray;
@@ -94,7 +92,6 @@ public final class QueryUtils {
         return output.toString();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private static List<Book> extractFeatureFromJson(String bookJSON) {
 
         // If the JSON string is empty or null, then return early.
@@ -128,14 +125,11 @@ public final class QueryUtils {
 
                 String bookTitle = infoJsonOb.getString("title");
 
-                String bookAuthor = infoJsonOb.getString("title");
+               // String bookAuthor = infoJsonOb.getString("title");
 
-               // JSONArray author = infoJsonOb.getJSONArray("author");
-               // String bookTitle  = String.join(",", (CharSequence) author);
+                String bookAuthor = infoJsonOb.getJSONArray("authors").join(", ");
 
-               // String bookAuthor = String.join(",", (CharSequence) author);
-
-              //  JSONObject imageLink = infoJsonOb.getJSONObject("imageLinks");
+                //  JSONObject imageLink = infoJsonOb.getJSONObject("imageLinks");
 
              //   String bookImage = imageLink.getString("thumbnail");
 
