@@ -7,9 +7,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.IdentityHashMap;
 
 public class BookAdapter extends ArrayAdapter<Book> {
+
 
     public BookAdapter(Activity context, ArrayList<Book> books) {
 
@@ -31,7 +36,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
 
         ImageView bookImageView = (ImageView)listItemView.findViewById(R.id.book_image);
-      //  bookImageView.setImage(currentBook.getBookImage());
+        Picasso.get().load(currentBook.getBookImage()).into(bookImageView);
 
 
 
